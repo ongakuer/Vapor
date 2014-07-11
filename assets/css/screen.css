@@ -4,7 +4,7 @@
 body {
   background-color: #ffffff;
   color: #7f8c8d;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 100;
   line-height: 1.6em;
   margin: 0;
@@ -22,7 +22,7 @@ p,
 li,
 dt,
 dd {
-  font-family: "Merriweather", "Open Sans", "Helvetica Neue", Helvetica, Arial, "Nimbus L", sans-serif;
+  font-family: "Roboto", "Open Sans", "Helvetica Neue", Helvetica, Arial, "Nimbus L", sans-serif;
 }
 h1,
 .post-meta {
@@ -43,7 +43,7 @@ p,
 li,
 dt,
 dd {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 100;
   line-height: 30px;
 }
@@ -77,7 +77,7 @@ p code {
 }
 h1 {
   color: #151515;
-  font-family: "Roboto Slab", "Merriweather", "Open Sans", "Helvetica Neue", Helvetica, Arial, "Nimbus L", sans-serif;
+  font-family: "Roboto Slab",  "Open Sans", "Helvetica Neue", Helvetica, Arial, "Nimbus L", sans-serif;
   font-size: 36px;
   font-weight: 400;
   line-height: 42px;
@@ -168,7 +168,7 @@ section.share p {
   margin: 0;
 }
 section.author h4 {
-  font-family: "Roboto Slab", "Merriweather", "Open Sans", "Helvetica Neue", Helvetica, Arial, "Nimbus L", sans-serif;
+  font-family: "Roboto Slab",  "Open Sans", "Helvetica Neue", Helvetica, Arial, "Nimbus L", sans-serif;
   font-weight: 400;
   margin-bottom: 4px;
 }
