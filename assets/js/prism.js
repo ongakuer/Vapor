@@ -1,4 +1,4 @@
-/* http://prismjs.com/download.html?themes=prism-okaidia&languages=markup+css+css-extras+clike+javascript+java+php+coffeescript+bash+c+cpp+python+sql+groovy+http+ruby+go+swift+objectivec+git */
+/* http://prismjs.com/download.html?themes=prism-okaidia&languages=markup+css+css-extras+clike+javascript+java+php+coffeescript+bash+c+cpp+python+sql+groovy+http+ruby+go+swift+objectivec+git&plugins=line-numbers */
 self = (typeof window !== 'undefined')
 	? window   // if in browser
 	: (
@@ -970,3 +970,43 @@ Prism.languages.git = {
 	'commit_sha1': /^commit \w{40}$/m
 };
 ;
+Prism.hooks.add('after-highlight', function (env) {
+	// works only for <code> wrapped inside <pre data-line-numbers> (not inline)
+	var pre = env.element.parentNode;
+	var current = env.element;
+
+	if (!current || !/code/i.test(current.nodeName)  || current.className.indexOf('line-numbers') === -1){
+		return;
+	}
+
+	if (!pre || !/pre/i.test(pre.nodeName) /*|| pre.className.indexOf('line-numbers') === -1*/) {
+		return;
+	}
+
+
+	preClassName =  pre.className;
+	
+	blank = (preClassName != '') ? ' ' : '';
+    added = preClassName + blank + "line-numbers";
+	pre.className = added;
+
+
+	// var linesNum = (1 + env.code.split('\n').length);
+	var linesNum = (env.code.split('\n').length);
+
+	var lineNumbersWrapper;
+
+	lines = new Array(linesNum);
+	lines = lines.join('<span></span>');
+
+	lineNumbersWrapper = document.createElement('span');
+	lineNumbersWrapper.className = 'line-numbers-rows';
+	lineNumbersWrapper.innerHTML = lines;
+
+	if (pre.hasAttribute('data-start')) {
+		pre.style.counterReset = 'linenumber ' + (parseInt(pre.getAttribute('data-start'), 10) - 1);
+	}
+
+	env.element.appendChild(lineNumbersWrapper);
+
+});;
