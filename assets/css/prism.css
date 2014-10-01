@@ -120,22 +120,12 @@ pre.line-numbers {
 	counter-reset: linenumber;
 }
 
-pre.line-numbers > code {
+
+pre > code[class*="language-"] {
 	position: relative;
 	display: inline-block;
 }
 
-/*
-pre[class*="language-"] {
-	position: relative;
-	padding-left: 3.8em;
-	counter-reset: linenumber;
-}
-
-pre[class*="language-"] > code {
-	position: relative;
-}
-*/
 
 
 
